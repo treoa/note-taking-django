@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+        django-job:
+                build: .
+                image: django-job:latest
+                container_name: note-taking
+                volumes:
+                        - django-job:/media
+                command: /bin/sh -c 'python3 manage.py runserver'
+volumes:
+        django-media:
+                external: true
